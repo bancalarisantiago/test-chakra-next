@@ -45,7 +45,6 @@ export default function Home() {
   const [flag, setFlag] = useBoolean();
 
   const path = usePathname();
-  console.log("PATH", path, path === "/Table")
 
 
   const variant = useBreakpointValue(
