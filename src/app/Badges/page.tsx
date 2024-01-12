@@ -1,28 +1,11 @@
 
 'use client'
-import Image from 'next/image'
-import styles from './page.module.css'
 import {
     Stack,
-    Box,
-    FormControl,
-    FormLabel,
-    Switch,
     Badge,
-    Container,
-    HStack,
 } from '@chakra-ui/react'
-import { useState } from 'react'
-import { DataTable } from '../components/DataTable'
-import BarCharts from '../components/BarCharts'
-import PieCharts from '../components/PieCharts';
-
-
 
 export default function Home() {
-
-    const [isLoaded, setIsLoaded] = useState(false)
-
     return (
         <main >
             <Stack

@@ -1,6 +1,5 @@
 'use client'
 import Image from 'next/image'
-import styles from './page.module.css'
 import {
   Stack,
   Box,
@@ -8,37 +7,20 @@ import {
   Skeleton,
   SkeletonCircle,
   SkeletonText,
-  Progress,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  TableContainer,
   Input,
   Select,
   Avatar,
   useBoolean,
-  Container,
   useBreakpointValue
 } from '@chakra-ui/react'
-import { useState } from 'react'
-import { DataTable } from './components/DataTable';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { PhoneIcon } from '@chakra-ui/icons'
-import SideMenu from './components/SideMenu'
+import SideMenu from '@/components/SideMenu'
 export default function Home() {
 
   const [isLoading, setIsLoading] = useBoolean();
@@ -73,7 +55,10 @@ export default function Home() {
           <Avatar name='Sasuke Uchiha' src='https://bit.ly/broken-link' />
           <Avatar src='https://bit.ly/broken-link' />
           <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-          <div onMouseEnter={setFlag.on} onMouseLeave={setFlag.off}>
+          <div
+            onMouseEnter={setFlag.on}
+            onMouseLeave={setFlag.off}
+          >
             {flag ? 'The flag is ON!' : 'Hover me to turn ON'}
           </div>
         </Stack>

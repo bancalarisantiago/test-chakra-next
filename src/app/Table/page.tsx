@@ -1,30 +1,6 @@
 
 'use client'
-import Image from 'next/image'
-import styles from './page.module.css'
 import {
-  Stack,
-  Button,
-  Skeleton,
-  SkeletonCircle,
-  SkeletonText,
-  Progress,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  Tfoot,
-  TableCaption,
-  TableContainer,
-  FormControl,
-  FormLabel,
-  Switch,
-  Container,
-  HStack,
   Table,
   Thead,
   Tbody,
@@ -36,11 +12,7 @@ import {
   Input,
   Tooltip
 } from '@chakra-ui/react'
-import { useState } from 'react'
-import { DataTable } from '../components/DataTable'
-import BarCharts from '../components/BarCharts'
-import PieCharts from '../components/PieCharts';
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
@@ -90,10 +62,10 @@ const columns = [
 ];
 
 export default function Home() {
+  type Status = 'Pendiente' | 'En curso' | 'Cerrado' | 'Desestimado' | 'A verificar' | 'En revisión';
 
-  const [isLoaded, setIsLoaded] = useState(false)
   const inputDateRef = useRef(null);
-  const statusColor = (status) => {
+  const statusColor = (status: Status) => {
     switch (status) {
       case 'Pendiente':
         return 'yellow';
@@ -327,7 +299,10 @@ export default function Home() {
                   </Tooltip>
                 </Td>
                 <Td>
-                  <Badge colorScheme={statusColor(report.status)} variant="solid">
+                  <Badge
+                    colorScheme={statusColor(report.status as Status)}
+                    variant="solid"
+                  >
                     {report.status}
                   </Badge>
                 </Td>
